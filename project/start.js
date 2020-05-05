@@ -17,7 +17,7 @@ app.get('/about', function(request, response) {
     response.render('pages/about');
 });
 
-app.get('/project', function(request, response) {
+app.get('/projects', function(request, response) {
     response.render('pages/projects');
 });
 
