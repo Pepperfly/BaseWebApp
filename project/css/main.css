@@ -12,7 +12,8 @@ h1 {
 }
 
 p {
-    margin-top: 80px font-family: "Courier New";
+    margin-top: 80px;
+    font-family: "Courier New";
     font-size: 30px;
 }
 
@@ -23,11 +24,19 @@ button {
 .page-header {
     background-color: #00bda5;
     padding-top: 40px;
-    padding-botton: 80px;
+    padding-bottom: 80px;
     color: rgb(255, 230, 0);
 }
 
 #doge-image img {
     height: 140px;
     margin-top: 20px;
+}
+
+.poll {
+    margin-top: 80px;
+}
+
+span {
+    padding: 0 20px;
 }

@@ -18,19 +18,24 @@
         <% include ../helpers/demo %>
     </p>
 
-    <button class="btn btn-default" type="button" onclick="myFunction()">
-    Try it
-  </button>
+    <input class="search" type="text" placeholder="Enter Week (1-16)">
+    <button type="button" onClick="searchRankings()">Search</button>
 
-    <div id="doge-image" />
+    <div class="error-message"></div>
 
+    <div class="poll"></div>
 
-    <div class="poll">
-    </div>
+    <div>Week: <span class="week"></span></div>
 
     <div class="ranks">
         <span class="rank"></span> <span class="school"></span> <span class="conference"></span> <span class="firstPlaceVotes"></span> <span class="points"></span>
     </div>
+
+    <button class="btn btn-default" type="button" onclick="myFunction()">
+        Try it something else...
+      </button>
+
+    <div id="doge-image"></div>
 
 </body>
 

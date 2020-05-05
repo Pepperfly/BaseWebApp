@@ -5,24 +5,34 @@ function myFunction() {
     $("#demo").html("NEWWW PARAGRAPH #javascript #fire");
 
     // 'img-circle' is a bootstrap thing! Check out more here: http://getbootstrap.com/css/
-    $("#doge-image").append(`<img class="img-circle" src="images/wowdoge.jpeg" />`);
+    $("#doge-image").append('<img class="img-circle" src="images/wowdoge.jpeg" />');
 }
 
-$(document).ready(function() {
-    getRankings();
-})
+// $(document).ready(function() {
+//     getRankings();
+// });
 
-function getRankings() {
-    var url = "https://api.collegefootballdata.com/rankings?year=2019&week=12&season=regular";
+function getRankings(searchWeek) {
+    var url = "https://api.collegefootballdata.com/rankings?year=2019&week=" + searchWeek + "&season=regular";
 
     $.ajax(url, {
         success: function(data) {
             console.log(data);
-            $(".poll").text(data[0].polls[1].poll);
-            $(".rank").text(data[0].polls[1].ranks[18].rank);
-            $(".school").text(data[0].polls[1].ranks[18].school);
-            $(".conference").text(data[0].polls[1].ranks[18].conference);
-            $(".points").text(data[0].polls[1].ranks[18].points);
+            $(".poll").text(data[0].polls[0].poll);
+            $(".week").text(data[0].week);
+            $(".rank").text(data[0].polls[0].ranks[24].rank);
+            $(".school").text(data[0].polls[0].ranks[24].school);
+            $(".conference").text(data[0].polls[0].ranks[24].conference);
+            $(".firstPlaceVotes").text(data[0].polls[0].ranks[24].firstPlaceVotes);
+            $(".points").text(data[0].polls[0].ranks[24].points);
+        },
+        error: function(error) {
+            $(".error-message").text("An error occured");
         }
-    })
+    });
+}
+
+function searchRankings() {
+    var searchWeek = $(".search").val();
+    getRankings(searchWeek);
 }
